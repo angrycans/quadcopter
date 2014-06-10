@@ -1,8 +1,8 @@
-step by step create quadcopter. \n
-raspberry pi is upper control   \n
-arduino mwc is flycontrol      \n 
-xbox360 joystick is control    \n 
+step by step create quadcopter. </br>
+raspberry pi is upper control   </br>
+arduino mwc is flycontrol       </br>
+xbox360 joystick is control     </br> 
 
 
-1.install xbox controller to Raspberry Pi \n
+1.install xbox controller to Raspberry Pi </br>
      https://github.com/petrockblog/RetroPie-Setup/wiki/Setting-up-the-XBox360-controller
