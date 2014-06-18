@@ -1,0 +1,50 @@
+1.install
+sudo apt-get install arduino arduino-mk
+
+2.test 
+mkdir example
+cd example
+vi test.cpp
+
+#include <Arduino.h>
+
+void setup(){
+  Serial.begin(115200);
+  while(! Serial) {
+        // Wait for serial port to connect
+    }
+  pinMode(13, OUTPUT);
+}
+
+void loop(){
+Serial.println("serial println");
+char next;
+ if( Serial.available() > 0 ) {
+        next = Serial.read();
+        Serial.print( next );
+    }
+  digitalWrite(13, HIGH);
+  delay(500);
+  digitalWrite(13, LOW);
+  delay(500);
+}
+
+
+vi Makefile
+
+ARDUINO_DIR = /usr/share/arduino
+BOARD_TAG =mega2560
+ARDUINO_PORT =/dev/ttyACM0
+
+include /usr/share/arduino/Arduino.mk
+
+
+3.run
+make
+make upload
+
+4.monitor:
+minicom -b 115200 -o -D /dev/ttyACM0
+
+
+//python evdev https://github.com/gvalkov/python-evdev
